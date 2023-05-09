@@ -1,5 +1,6 @@
 node_modules/
 public/
+prisma/
 ./package-lock.json
 *.sql
 *.prisma

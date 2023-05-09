@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
 import cors from "cors";
-import { router } from "./routes/products.js";
+import { router } from "./routes/prisma.js";
 
 const app = express();
 

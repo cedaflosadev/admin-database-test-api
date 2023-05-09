@@ -25,9 +25,11 @@
     "mocha": "*",
     "node-fetch": "^3.2.4",
     "nodemon": "^2.0.20",
+    "prisma": "^4.13.0",
     "standard": "^17.0.0"
   },
   "dependencies": {
+    "@prisma/client": "^4.13.0",
     "chai": "*",
     "chai-http": "*",
     "cors": "^2.8.5",

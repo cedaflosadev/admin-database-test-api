@@ -10,7 +10,7 @@ export const buildPrismaFile = async (req, res = response) => {
     const filename = "schema.prisma";
     const inputFolder = "./prisma";
     if (!fs.existsSync(inputFolder)) {
-      await fs.promises.mkdir(inputFolder);
+      await execCommand("npx prisma init");
     }
     await fs.promises.writeFile(
       inputFolder + "/" + filename,

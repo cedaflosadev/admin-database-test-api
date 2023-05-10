@@ -12,13 +12,17 @@ export const buildPrismaFile = async (req, res = response) => {
     if (!fs.existsSync(inputFolder)) {
       await execCommand("npx prisma init");
     }
+    const migrationFolder = inputFolder + "/migrations";
+    if (!fs.existsSync(migrationFolder)) {
+      await fs.promises.mkdir(migrationFolder);
+    }
     await fs.promises.writeFile(
       inputFolder + "/" + filename,
       contentFile,
       "utf8"
     );
 
-    await execCommand("npx prisma migrate dev --name init");
+    await execCommand("yes | npx prisma migrate dev --name init");
     return res.status(200).json({
       response: true,
     });

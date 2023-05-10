@@ -22,7 +22,7 @@ export const buildPrismaFile = async (req, res = response) => {
       "utf8"
     );
 
-    await execCommand("yes | npx prisma migrate dev --name init");
+    await execCommand("npx prisma migrate dev --name init");
     return res.status(200).json({
       response: true,
     });
